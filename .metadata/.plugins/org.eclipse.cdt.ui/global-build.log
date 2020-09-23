@@ -1,0 +1,173 @@
+16:19:51 **** Build of configuration Debug for project Introduction ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446retx.d" -MT"Startup/startup_stm32f446retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f446retx.o" "../Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'main':
+../Src/main.c:25:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+ { printf("HelloWorld\n");
+   ^~~~~~
+../Src/main.c:25:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main.c:25:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "Introduction.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bajar\Desktop\Embedded\Introduction\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Introduction.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Introduction.elf
+ 
+arm-none-eabi-size   Introduction.elf 
+arm-none-eabi-objdump -h -S  Introduction.elf  > "Introduction.list"
+arm-none-eabi-objcopy  -O binary  Introduction.elf  "Introduction.bin"
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Introduction.elf
+Finished building: default.size.stdout
+ 
+Finished building: Introduction.list
+Finished building: Introduction.bin
+ 
+ 
+16:19:57 **** Incremental Build of configuration Debug for project Introduction ****
+make -j4 all 
+arm-none-eabi-size   Introduction.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Introduction.elf
+Finished building: default.size.stdout
+ 
+16:20:41 **** Incremental Build of configuration Debug for project Introduction ****
+make -j4 all 
+arm-none-eabi-size   Introduction.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Introduction.elf
+Finished building: default.size.stdout
+ 
+16:24:30 **** Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446retx.d" -MT"Startup/startup_stm32f446retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f446retx.o" "../Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'main':
+../Src/main.c:25:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+ { printf("HelloWorld\n")
+   ^~~~~~
+../Src/main.c:25:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main.c:25:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main.c:27:2: error: expected ';' before 'for'
+  for(;;);
+  ^~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/syscalls.c: In function 'ITM_SendChar':
+../Src/syscalls.c:38:2: error: 'DEMCR' undeclared (first use in this function)
+  DEMCR |= ( 1 << 24);
+  ^~~~~
+../Src/syscalls.c:38:2: note: each undeclared identifier is reported only once for each function it appears in
+../Src/syscalls.c:41:2: error: 'ITM_TRACE_EN' undeclared (first use in this function)
+  ITM_TRACE_EN |= ( 1 << 0);
+  ^~~~~~~~~~~~
+../Src/syscalls.c:44:10: error: 'ITM_STIMULUS_PORT0' undeclared (first use in this function)
+  while(!(ITM_STIMULUS_PORT0 & 1));
+          ^~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:26: Src/syscalls.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:24:41 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+../Src/main.c: In function 'main':
+../Src/main.c:25:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+ { printf("HelloWorld\n");
+   ^~~~~~
+../Src/main.c:25:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main.c:25:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/syscalls.c: In function 'ITM_SendChar':
+../Src/syscalls.c:38:2: error: 'DEMCR' undeclared (first use in this function)
+  DEMCR |= ( 1 << 24);
+  ^~~~~
+../Src/syscalls.c:38:2: note: each undeclared identifier is reported only once for each function it appears in
+../Src/syscalls.c:41:2: error: 'ITM_TRACE_EN' undeclared (first use in this function)
+  ITM_TRACE_EN |= ( 1 << 0);
+  ^~~~~~~~~~~~
+../Src/syscalls.c:44:10: error: 'ITM_STIMULUS_PORT0' undeclared (first use in this function)
+  while(!(ITM_STIMULUS_PORT0 & 1));
+          ^~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:26: Src/syscalls.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:25:39 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -o "Intro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bajar\Desktop\Embedded\Intro\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Intro.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Intro.elf
+ 
+arm-none-eabi-size   Intro.elf 
+arm-none-eabi-objdump -h -S  Intro.elf  > "Intro.list"
+arm-none-eabi-objcopy  -O binary  Intro.elf  "Intro.bin"
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
+Finished building: Intro.bin
+Finished building: Intro.list
+ 
+ 
+16:26:03 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-size   Intro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
+16:26:25 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-size   Intro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
+16:26:32 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-size   Intro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
+16:26:52 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-size   Intro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
+16:27:01 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-size   Intro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
+16:27:54 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-size   Intro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
+16:28:00 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-size   Intro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
+16:28:47 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-size   Intro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
+16:29:43 **** Incremental Build of configuration Debug for project Intro ****
+make -j4 all 
+arm-none-eabi-size   Intro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3504	    108	   1580	   5192	   1448	Intro.elf
+Finished building: default.size.stdout
+ 
