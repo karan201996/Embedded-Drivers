@@ -838,15 +838,15 @@ OUTPUT(Intro.elf elf32-littlearm)
  .debug_line    0x00000000000007a9      0x4c2 Src/sysmem.o
  .debug_line    0x0000000000000c6b       0x84 Startup/startup_stm32f446retx.o
 
-.debug_str      0x0000000000000000     0x90cd
- .debug_str     0x0000000000000000     0x2cdc Src/main.o
-                                       0x2ce1 (size before relaxing)
- .debug_str     0x0000000000002cdc     0x5a13 Src/syscalls.o
-                                       0x8932 (size before relaxing)
- .debug_str     0x00000000000086ef      0x9ad Src/sysmem.o
-                                       0x5f45 (size before relaxing)
- .debug_str     0x000000000000909c       0x31 Startup/startup_stm32f446retx.o
-                                         0x5d (size before relaxing)
+.debug_str      0x0000000000000000     0x90de
+ .debug_str     0x0000000000000000     0x2ced Src/main.o
+                                       0x2cf2 (size before relaxing)
+ .debug_str     0x0000000000002ced     0x5a13 Src/syscalls.o
+                                       0x8943 (size before relaxing)
+ .debug_str     0x0000000000008700      0x9ad Src/sysmem.o
+                                       0x5f56 (size before relaxing)
+ .debug_str     0x00000000000090ad       0x31 Startup/startup_stm32f446retx.o
+                                         0x6e (size before relaxing)
 
 .comment        0x0000000000000000       0x7b
  .comment       0x0000000000000000       0x7b Src/main.o

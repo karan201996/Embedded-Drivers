@@ -8,8 +8,11 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Startup/subdir.mk
--include Src/subdir.mk
+-include Intro/Startup/subdir.mk
+-include Intro/Src/subdir.mk
+-include Intro/Debug/Startup/subdir.mk
+-include Intro/Debug/Src/subdir.mk
+-include Intro/Debug/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -29,24 +32,24 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Intro.elf \
+002SampleApp.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Intro.list \
+002SampleApp.list \
 
 OBJCOPY_BIN += \
-Intro.bin \
+002SampleApp.bin \
 
 
 # All Target
-all: Intro.elf secondary-outputs
+all: 002SampleApp.elf secondary-outputs
 
 # Tool invocations
-Intro.elf: $(OBJS) $(USER_OBJS) C:\Users\bajar\Desktop\Embedded\Embedded-Drivers\Intro\STM32F446RETX_FLASH.ld
-	arm-none-eabi-gcc -o "Intro.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\bajar\Desktop\Embedded\Embedded-Drivers\Intro\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Intro.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+002SampleApp.elf: $(OBJS) $(USER_OBJS) C:\Users\bajar\Desktop\Embedded\Embedded-Drivers\STM32F446RETX_FLASH.ld
+	arm-none-eabi-gcc -o "002SampleApp.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\bajar\Desktop\Embedded\Embedded-Drivers\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="002SampleApp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -55,13 +58,13 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Intro.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Intro.list"
+002SampleApp.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "002SampleApp.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Intro.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Intro.bin"
+002SampleApp.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "002SampleApp.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
